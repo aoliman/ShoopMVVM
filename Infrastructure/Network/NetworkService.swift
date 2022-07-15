@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Combine
 public enum NetworkError: Error {
     case error(statusCode: Int, data: Data?)
     case notConnected
@@ -22,16 +22,13 @@ public protocol NetworkCancellable {
 extension URLSessionTask: NetworkCancellable { }
 
 public protocol NetworkService {
-    typealias CompletionHandler = (Result<Data?, NetworkError>) -> Void
-    
-    func request(endpoint: Requestable, completion: @escaping CompletionHandler) -> NetworkCancellable?
+    func request(endpoint: Requestable) -> Future<Data?, NetworkError>?
 }
 
 public protocol NetworkSessionManager {
-    typealias CompletionHandler = (Data?, URLResponse?, Error?) -> Void
+  //  typealias CompletionHandler = (Data?, URLResponse?, Error?) -> Void
     
-    func request(_ request: URLRequest,
-                 completion: @escaping CompletionHandler) -> NetworkCancellable
+    func request(_ request: URLRequest) -> AnyPublisher<URLSession.DataTaskPublisher.Output, URLSession.DataTaskPublisher.Failure>
 }
 
 public protocol NetworkErrorLogger {
@@ -47,7 +44,7 @@ public final class DefaultNetworkService {
     private let config: NetworkConfigurable
     private let sessionManager: NetworkSessionManager
     private let logger: NetworkErrorLogger
-    
+    private var cancellables = Set<AnyCancellable>()
     public init(config: NetworkConfigurable,
                 sessionManager: NetworkSessionManager = DefaultNetworkSessionManager(),
                 logger: NetworkErrorLogger = DefaultNetworkErrorLogger()) {
@@ -56,29 +53,29 @@ public final class DefaultNetworkService {
         self.logger = logger
     }
     
-    private func request(request: URLRequest, completion: @escaping CompletionHandler) -> NetworkCancellable {
-        
-        let sessionDataTask = sessionManager.request(request) { data, response, requestError in
-            
-            if let requestError = requestError {
-                var error: NetworkError
-                if let response = response as? HTTPURLResponse {
-                    error = .error(statusCode: response.statusCode, data: data)
-                } else {
-                    error = self.resolve(error: requestError)
-                }
-                
-                self.logger.log(error: error)
-                completion(.failure(error))
-            } else {
-                self.logger.log(responseData: data, response: response)
-                completion(.success(data))
-            }
-        }
-    
+    private func request(request: URLRequest) -> Future<Data?, NetworkError> {
         logger.log(request: request)
+       return  Future<Data?, NetworkError> { promise in
+           
+           self.sessionManager.request(request).sink { requestError in
+               if case let .failure(requestError) = requestError {
+                   let error: NetworkError = self.resolve(error: requestError)
+                   self.logger.log(error: self.resolve(error: requestError))
+                   promise(.failure(error))
+               }
+           } receiveValue: { (data: Data, response: URLResponse) in
+//               if let response = response as? HTTPURLResponse {
+//                   response.
+//                   var error : NetworkError = .error(statusCode: response.statusCode, data: data)
+//                   self.logger.log(error: error)
+//                   promise(.failure(error))
+//               }
+               self.logger.log(responseData: data, response: response)
+               promise(.success(data))
+           }.store(in: &self.cancellables)
+        }
 
-        return sessionDataTask
+    
     }
     
     private func resolve(error: Error) -> NetworkError {
@@ -93,13 +90,21 @@ public final class DefaultNetworkService {
 
 extension DefaultNetworkService: NetworkService {
     
-    public func request(endpoint: Requestable, completion: @escaping CompletionHandler) -> NetworkCancellable? {
-        do {
-            let urlRequest = try endpoint.urlRequest(with: config)
-            return request(request: urlRequest, completion: completion)
-        } catch {
-            completion(.failure(.urlGeneration))
-            return nil
+    public func request(endpoint: Requestable) ->Future<Data?,NetworkError>? {
+        
+        return Future<Data?,NetworkError> { promise in
+            do {
+                let urlRequest = try endpoint.urlRequest(with: self.config)
+                self.request(request: urlRequest).sink { networkError in
+                    if case let .failure(requestError) = networkError {
+                        promise(.failure(requestError))
+                    }
+                } receiveValue: { data in
+                    promise(.success(data))
+                }.store(in: &self.cancellables)
+            } catch {
+                promise(.failure(.urlGeneration))
+            }
         }
     }
 }
@@ -111,10 +116,8 @@ extension DefaultNetworkService: NetworkService {
 
 public class DefaultNetworkSessionManager: NetworkSessionManager {
     public init() {}
-    public func request(_ request: URLRequest,
-                        completion: @escaping CompletionHandler) -> NetworkCancellable {
-        let task = URLSession.shared.dataTask(with: request, completionHandler: completion)
-        task.resume()
+    public func request(_ request: URLRequest) -> AnyPublisher<URLSession.DataTaskPublisher.Output, URLSession.DataTaskPublisher.Failure> {
+        let task = URLSession.shared.dataTaskPublisher(for: request).eraseToAnyPublisher()
         return task
     }
 }

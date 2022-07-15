@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E10EBE3B28807451006B0127 /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EBE2528807450006B0127 /* BaseWireframe.swift */; };
+		E10EBE3C28807451006B0127 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EBE2628807450006B0127 /* BaseViewController.swift */; };
+		E10EBE3D28807451006B0127 /* BaseViperProtocools.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EBE2728807450006B0127 /* BaseViperProtocools.swift */; };
+		E10EBE3E28807451006B0127 /* Stylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EBE2828807450006B0127 /* Stylable.swift */; };
+		E10EBE3F28807451006B0127 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EBE2A28807450006B0127 /* Date.swift */; };
+		E10EBE4028807451006B0127 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EBE2B28807450006B0127 /* UIView.swift */; };
+		E10EBE4128807451006B0127 /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EBE2C28807450006B0127 /* Date+extension.swift */; };
+		E10EBE4228807451006B0127 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EBE2D28807450006B0127 /* Storyboard.swift */; };
+		E10EBE4328807451006B0127 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EBE2E28807450006B0127 /* UIViewController.swift */; };
+		E10EBE4428807451006B0127 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EBE2F28807450006B0127 /* UIFont.swift */; };
+		E10EBE4528807451006B0127 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EBE3028807450006B0127 /* UIApplication.swift */; };
+		E10EBE4628807451006B0127 /* QrGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EBE3328807451006B0127 /* QrGenerator.swift */; };
+		E10EBE4728807451006B0127 /* KeyChainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EBE3428807451006B0127 /* KeyChainWrapper.swift */; };
+		E10EBE4828807451006B0127 /* ShoopDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EBE3628807451006B0127 /* ShoopDateFormatter.swift */; };
+		E10EBE4928807451006B0127 /* ViewFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EBE3728807451006B0127 /* ViewFormatter.swift */; };
+		E10EBE4A28807451006B0127 /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EBE3828807451006B0127 /* StringFormatter.swift */; };
+		E10EBE4B28807451006B0127 /* InputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EBE3A28807451006B0127 /* InputValidator.swift */; };
+		E10EBE4D288081D6006B0127 /* LoginModelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EBE4C288081D6006B0127 /* LoginModelResponse.swift */; };
+		E10EBE5528808387006B0127 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EBE5428808387006B0127 /* APIEndpoints.swift */; };
+		E193AF7828805EF400C68E37 /* LoginModelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193AF7728805EF400C68E37 /* LoginModelRequest.swift */; };
 		E1A0F5ED287AE21C0036906C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B76C4A287A30F4000FE420 /* Main.storyboard */; };
 		E1A0F5EF287AFE890036906C /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = E1A0F5EE287AFE890036906C /* landmarkData.json */; };
 		E1A0F5F1287B071F0036906C /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A0F5F0287B071F0036906C /* ModelData.swift */; };
@@ -14,6 +34,12 @@
 		E1A0F5F5287B07D80036906C /* LandmarkRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A0F5F4287B07D80036906C /* LandmarkRowView.swift */; };
 		E1A0F5F7287B09FC0036906C /* LandMarkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A0F5F6287B09FC0036906C /* LandMarkListView.swift */; };
 		E1A0F5F9287B0B890036906C /* LandMarkDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A0F5F8287B0B890036906C /* LandMarkDetailsView.swift */; };
+		E1A27DC328819DB000C071C4 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A27DC228819DB000C071C4 /* UserSession.swift */; };
+		E1A27DC52881A17600C071C4 /* UserProfileRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A27DC42881A17600C071C4 /* UserProfileRepositoryProtocol.swift */; };
+		E1A27DC72881A1AC00C071C4 /* UserProfileRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A27DC62881A1AB00C071C4 /* UserProfileRepositoryImp.swift */; };
+		E1A27DC92881C52C00C071C4 /* UserProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A27DC82881C52C00C071C4 /* UserProfileUseCase.swift */; };
+		E1A388FC28803D29008144A1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A388FB28803D29008144A1 /* LoginViewModel.swift */; };
+		E1A38906288045EA008144A1 /* STextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A38905288045EA008144A1 /* STextField.swift */; };
 		E1A3A6FA287A10B3003D3653 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1A3A6F9287A10B3003D3653 /* Assets.xcassets */; };
 		E1A3A6FD287A10B3003D3653 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A3A6FB287A10B3003D3653 /* LaunchScreen.storyboard */; };
 		E1A3A708287A10B3003D3653 /* ShoopMVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A3A707287A10B3003D3653 /* ShoopMVVMTests.swift */; };
@@ -69,12 +95,39 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E10EBE2528807450006B0127 /* BaseWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
+		E10EBE2628807450006B0127 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E10EBE2728807450006B0127 /* BaseViperProtocools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViperProtocools.swift; sourceTree = "<group>"; };
+		E10EBE2828807450006B0127 /* Stylable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stylable.swift; sourceTree = "<group>"; };
+		E10EBE2A28807450006B0127 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		E10EBE2B28807450006B0127 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		E10EBE2C28807450006B0127 /* Date+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+extension.swift"; sourceTree = "<group>"; };
+		E10EBE2D28807450006B0127 /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		E10EBE2E28807450006B0127 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		E10EBE2F28807450006B0127 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		E10EBE3028807450006B0127 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		E10EBE3328807451006B0127 /* QrGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QrGenerator.swift; sourceTree = "<group>"; };
+		E10EBE3428807451006B0127 /* KeyChainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChainWrapper.swift; sourceTree = "<group>"; };
+		E10EBE3628807451006B0127 /* ShoopDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoopDateFormatter.swift; sourceTree = "<group>"; };
+		E10EBE3728807451006B0127 /* ViewFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFormatter.swift; sourceTree = "<group>"; };
+		E10EBE3828807451006B0127 /* StringFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringFormatter.swift; sourceTree = "<group>"; };
+		E10EBE3A28807451006B0127 /* InputValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputValidator.swift; sourceTree = "<group>"; };
+		E10EBE4C288081D6006B0127 /* LoginModelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModelResponse.swift; sourceTree = "<group>"; };
+		E10EBE5428808387006B0127 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		E193AF7728805EF400C68E37 /* LoginModelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModelRequest.swift; sourceTree = "<group>"; };
 		E1A0F5EE287AFE890036906C /* landmarkData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = landmarkData.json; sourceTree = "<group>"; };
 		E1A0F5F0287B071F0036906C /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		E1A0F5F2287B072C0036906C /* Landmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 		E1A0F5F4287B07D80036906C /* LandmarkRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkRowView.swift; sourceTree = "<group>"; };
 		E1A0F5F6287B09FC0036906C /* LandMarkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandMarkListView.swift; sourceTree = "<group>"; };
 		E1A0F5F8287B0B890036906C /* LandMarkDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandMarkDetailsView.swift; sourceTree = "<group>"; };
+		E1A27DC128819C0500C071C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E1A27DC228819DB000C071C4 /* UserSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		E1A27DC42881A17600C071C4 /* UserProfileRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileRepositoryProtocol.swift; sourceTree = "<group>"; };
+		E1A27DC62881A1AB00C071C4 /* UserProfileRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileRepositoryImp.swift; sourceTree = "<group>"; };
+		E1A27DC82881C52C00C071C4 /* UserProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileUseCase.swift; sourceTree = "<group>"; };
+		E1A388FB28803D29008144A1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E1A38905288045EA008144A1 /* STextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STextField.swift; sourceTree = "<group>"; };
 		E1A3A6ED287A10B1003D3653 /* ShoopMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoopMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A3A6F9287A10B3003D3653 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1A3A6FC287A10B3003D3653 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -142,6 +195,188 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E10EBE2428807450006B0127 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E10EBE2528807450006B0127 /* BaseWireframe.swift */,
+				E10EBE2628807450006B0127 /* BaseViewController.swift */,
+				E10EBE2728807450006B0127 /* BaseViperProtocools.swift */,
+				E10EBE2828807450006B0127 /* Stylable.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E10EBE2928807450006B0127 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E10EBE2A28807450006B0127 /* Date.swift */,
+				E10EBE2B28807450006B0127 /* UIView.swift */,
+				E10EBE2C28807450006B0127 /* Date+extension.swift */,
+				E10EBE2D28807450006B0127 /* Storyboard.swift */,
+				E10EBE2E28807450006B0127 /* UIViewController.swift */,
+				E10EBE2F28807450006B0127 /* UIFont.swift */,
+				E10EBE3028807450006B0127 /* UIApplication.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E10EBE3128807451006B0127 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E10EBE3228807451006B0127 /* QrGenerator */,
+				E10EBE3428807451006B0127 /* KeyChainWrapper.swift */,
+				E10EBE3528807451006B0127 /* Formatters */,
+				E10EBE3928807451006B0127 /* Validators */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E10EBE3228807451006B0127 /* QrGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				E10EBE3328807451006B0127 /* QrGenerator.swift */,
+			);
+			path = QrGenerator;
+			sourceTree = "<group>";
+		};
+		E10EBE3528807451006B0127 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				E10EBE3628807451006B0127 /* ShoopDateFormatter.swift */,
+				E10EBE3728807451006B0127 /* ViewFormatter.swift */,
+				E10EBE3828807451006B0127 /* StringFormatter.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		E10EBE3928807451006B0127 /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				E10EBE3A28807451006B0127 /* InputValidator.swift */,
+			);
+			path = Validators;
+			sourceTree = "<group>";
+		};
+		E10EBE4E288081F7006B0127 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				E1A27DC82881C52C00C071C4 /* UserProfileUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		E10EBE4F2880825C006B0127 /* RepositoriesProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				E1A27DC42881A17600C071C4 /* UserProfileRepositoryProtocol.swift */,
+			);
+			path = RepositoriesProtocols;
+			sourceTree = "<group>";
+		};
+		E10EBE50288082C6006B0127 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				E1A27DC62881A1AB00C071C4 /* UserProfileRepositoryImp.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		E10EBE5328808305006B0127 /* DataMapping */ = {
+			isa = PBXGroup;
+			children = (
+				E193AF7728805EF400C68E37 /* LoginModelRequest.swift */,
+				E10EBE4C288081D6006B0127 /* LoginModelResponse.swift */,
+				E1A27DC228819DB000C071C4 /* UserSession.swift */,
+			);
+			path = DataMapping;
+			sourceTree = "<group>";
+		};
+		E10EBE5728808425006B0127 /* ApiEndPoints */ = {
+			isa = PBXGroup;
+			children = (
+				E10EBE5428808387006B0127 /* APIEndpoints.swift */,
+			);
+			path = ApiEndPoints;
+			sourceTree = "<group>";
+		};
+		E1A27DBD28819AB600C071C4 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				E1A27DC028819ADE00C071C4 /* Data */,
+				E1A27DBF28819AD900C071C4 /* Domain */,
+				E1A27DBE28819AC800C071C4 /* Presentation */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		E1A27DBE28819AC800C071C4 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		E1A27DBF28819AD900C071C4 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		E1A27DC028819ADE00C071C4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E1A388F828803CD8008144A1 /* LandMark */ = {
+			isa = PBXGroup;
+			children = (
+				E1A388FA28803D04008144A1 /* View */,
+				E1A388F928803CE8008144A1 /* Model */,
+			);
+			path = LandMark;
+			sourceTree = "<group>";
+		};
+		E1A388F928803CE8008144A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E1A0F5F2287B072C0036906C /* Landmark.swift */,
+				E1A0F5F0287B071F0036906C /* ModelData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E1A388FA28803D04008144A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E1A0F5F4287B07D80036906C /* LandmarkRowView.swift */,
+				E1A0F5F6287B09FC0036906C /* LandMarkListView.swift */,
+				E1A0F5F8287B0B890036906C /* LandMarkDetailsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E1A388FD2880454E008144A1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E10EBE2428807450006B0127 /* Base */,
+				E10EBE2928807450006B0127 /* Extensions */,
+				E10EBE3128807451006B0127 /* Utilities */,
+				E1A388FE28804558008144A1 /* UIComponents */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E1A388FE28804558008144A1 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				E1A38905288045EA008144A1 /* STextField.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
 		E1A3A6E4287A10B1003D3653 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +400,8 @@
 		E1A3A6EF287A10B1003D3653 /* ShoopMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				E1A27DC128819C0500C071C4 /* Info.plist */,
+				E1A388FD2880454E008144A1 /* Core */,
 				E1A3A778287A19B1003D3653 /* Features */,
 				E1A3A73E287A1160003D3653 /* Application */,
 				E1A3A746287A1160003D3653 /* Common */,
@@ -294,6 +531,8 @@
 		E1A3A778287A19B1003D3653 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				E1A27DBD28819AB600C071C4 /* Events */,
+				E1A388F828803CD8008144A1 /* LandMark */,
 				E1A3A779287A19C3003D3653 /* Login */,
 			);
 			path = Features;
@@ -312,8 +551,9 @@
 		E1A3A77A287A19D4003D3653 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				E1A0F5F2287B072C0036906C /* Landmark.swift */,
-				E1A0F5F0287B071F0036906C /* ModelData.swift */,
+				E10EBE5728808425006B0127 /* ApiEndPoints */,
+				E10EBE5328808305006B0127 /* DataMapping */,
+				E10EBE50288082C6006B0127 /* Repositories */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -321,6 +561,8 @@
 		E1A3A77B287A19DA003D3653 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				E10EBE4F2880825C006B0127 /* RepositoriesProtocols */,
+				E10EBE4E288081F7006B0127 /* UseCase */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -340,9 +582,6 @@
 			isa = PBXGroup;
 			children = (
 				E1A3A77F287A2054003D3653 /* LoginView.swift */,
-				E1A0F5F4287B07D80036906C /* LandmarkRowView.swift */,
-				E1A0F5F6287B09FC0036906C /* LandMarkListView.swift */,
-				E1A0F5F8287B0B890036906C /* LandMarkDetailsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -350,6 +589,7 @@
 		E1A3A77E287A2032003D3653 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E1A388FB28803D29008144A1 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -502,38 +742,64 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E10EBE3D28807451006B0127 /* BaseViperProtocools.swift in Sources */,
 				E1B76C47287A30ED000FE420 /* ViewController.swift in Sources */,
+				E10EBE4228807451006B0127 /* Storyboard.swift in Sources */,
 				E1A3A759287A1160003D3653 /* Endpoint.swift in Sources */,
 				E1A3A757287A1160003D3653 /* DataTransferService.swift in Sources */,
+				E10EBE3B28807451006B0127 /* BaseWireframe.swift in Sources */,
 				E1A3A771287A138A003D3653 /* UIImageView+ImageSizeAfterAspectFit.swift in Sources */,
+				E10EBE3C28807451006B0127 /* BaseViewController.swift in Sources */,
+				E10EBE4528807451006B0127 /* UIApplication.swift in Sources */,
+				E10EBE4728807451006B0127 /* KeyChainWrapper.swift in Sources */,
+				E10EBE4B28807451006B0127 /* InputValidator.swift in Sources */,
 				E1A3A76F287A138A003D3653 /* UIViewController+AddBehaviors.swift in Sources */,
 				E1A3A753287A1160003D3653 /* AppDIContainer.swift in Sources */,
 				E1A3A776287A138A003D3653 /* UseCase.swift in Sources */,
 				E1A3A775287A138A003D3653 /* LoadingView.swift in Sources */,
+				E1A388FC28803D29008144A1 /* LoginViewModel.swift in Sources */,
 				E1A3A74F287A1160003D3653 /* AppFlowCoordinator.swift in Sources */,
 				E1A3A777287A138A003D3653 /* RepositoryTask.swift in Sources */,
+				E10EBE4628807451006B0127 /* QrGenerator.swift in Sources */,
+				E1A27DC72881A1AC00C071C4 /* UserProfileRepositoryImp.swift in Sources */,
+				E1A38906288045EA008144A1 /* STextField.swift in Sources */,
 				E1A0F5F7287B09FC0036906C /* LandMarkListView.swift in Sources */,
+				E10EBE4928807451006B0127 /* ViewFormatter.swift in Sources */,
 				E1A3A76C287A138A003D3653 /* CGSize+ScaledSize.swift in Sources */,
 				E1A3A752287A1160003D3653 /* MoviesSceneDIContainer.swift in Sources */,
+				E10EBE3F28807451006B0127 /* Date.swift in Sources */,
 				E1A0F5F1287B071F0036906C /* ModelData.swift in Sources */,
 				E1A3A773287A138A003D3653 /* Alertable.swift in Sources */,
 				E1B76C45287A2E36000FE420 /* SceneDelegate.swift in Sources */,
 				E1A3A774287A138A003D3653 /* StoryboardInstantiable.swift in Sources */,
+				E193AF7828805EF400C68E37 /* LoginModelRequest.swift in Sources */,
+				E10EBE5528808387006B0127 /* APIEndpoints.swift in Sources */,
+				E1A27DC92881C52C00C071C4 /* UserProfileUseCase.swift in Sources */,
+				E1A27DC328819DB000C071C4 /* UserSession.swift in Sources */,
+				E10EBE4028807451006B0127 /* UIView.swift in Sources */,
 				E1A3A782287A20AE003D3653 /* LoginSceneDIContainer.swift in Sources */,
 				E1A3A755287A1160003D3653 /* Cancelable.swift in Sources */,
 				E1A3A754287A1160003D3653 /* AppDelegate.swift in Sources */,
 				E1A0F5F3287B072C0036906C /* Landmark.swift in Sources */,
 				E1A0F5F5287B07D80036906C /* LandmarkRowView.swift in Sources */,
+				E10EBE4328807451006B0127 /* UIViewController.swift in Sources */,
 				E1A3A772287A138A003D3653 /* Observable.swift in Sources */,
 				E1A3A76E287A138A003D3653 /* DataTransferError+ConnectionError.swift in Sources */,
 				E1A3A751287A1160003D3653 /* AppConfigurations.swift in Sources */,
+				E10EBE4828807451006B0127 /* ShoopDateFormatter.swift in Sources */,
 				E1A3A76B287A138A003D3653 /* AccessibilityIdentifier.swift in Sources */,
 				E1A0F5F9287B0B890036906C /* LandMarkDetailsView.swift in Sources */,
+				E1A27DC52881A17600C071C4 /* UserProfileRepositoryProtocol.swift in Sources */,
+				E10EBE3E28807451006B0127 /* Stylable.swift in Sources */,
+				E10EBE4D288081D6006B0127 /* LoginModelResponse.swift in Sources */,
 				E1A3A75A287A1160003D3653 /* NetworkConfig.swift in Sources */,
+				E10EBE4128807451006B0127 /* Date+extension.swift in Sources */,
 				E1A3A780287A2054003D3653 /* LoginView.swift in Sources */,
 				E1A3A750287A1160003D3653 /* AppAppearance.swift in Sources */,
 				E1A3A758287A1160003D3653 /* NetworkService.swift in Sources */,
 				E1A3A756287A1160003D3653 /* ConnectionError.swift in Sources */,
+				E10EBE4A28807451006B0127 /* StringFormatter.swift in Sources */,
+				E10EBE4428807451006B0127 /* UIFont.swift in Sources */,
 				E1A3A76D287A138A003D3653 /* UIViewController+AddChild.swift in Sources */,
 				E1A3A786287A2174003D3653 /* LoginFlowCoordinator.swift in Sources */,
 				E1A3A770287A138A003D3653 /* UIViewController+ActivityIndicator.swift in Sources */,
@@ -706,7 +972,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "";
+				INFOPLIST_FILE = ShoopMVVM/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -733,7 +999,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "";
+				INFOPLIST_FILE = ShoopMVVM/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

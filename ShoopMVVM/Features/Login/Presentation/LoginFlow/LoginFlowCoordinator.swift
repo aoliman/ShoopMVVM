@@ -6,12 +6,10 @@
 //
 
 import UIKit
+import SwiftUI
 class LoginFlowCoordinator {
     
     private weak var navigationController: UINavigationController?
-
-    private weak var moviesQueriesSuggestionsVC: UIViewController?
-
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
@@ -25,8 +23,8 @@ class LoginFlowCoordinator {
         
         
         
-
-        navigationController?.pushViewController(LoginSceneDIContainer().LoginViewController(), animated: false)
+        
+     //   navigationController?.pushViewController(LoginSceneDIContainer().LoginViewController(), animated: false)
     }
 
 }

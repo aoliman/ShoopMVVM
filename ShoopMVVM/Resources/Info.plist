@@ -20,6 +20,8 @@
 				</dict>
 			</array>
 		</dict>
+		<key>ApiBaseURL</key>
+		<false/>
 	</dict>
 </dict>
 </plist>

@@ -15,11 +15,10 @@ public enum DataTransferError: Error {
 }
 
 public protocol DataTransferService {
-    
     @discardableResult
-    func request<T: Decodable, E: ResponseRequestable>(with endpoint: E) -> AnyPublisher<Result<T, DataTransferError>,Never>? where E.Response == T
+    func request<T: Decodable, E: ResponseRequestable>(with endpoint: E) -> Future<T,Error>? where E.Response == T
     @discardableResult
-    func request<E: ResponseRequestable>(with endpoint: E) ->  AnyPublisher<Result<Void, DataTransferError>,Never>? where E.Response == Void
+    func request<E: ResponseRequestable>(with endpoint: E) ->Future<Void,Error>? where E.Response == Void
 }
 
 public protocol DataTransferErrorResolver {
@@ -39,7 +38,8 @@ public final class DefaultDataTransferService {
     private let networkService: NetworkService
     private let errorResolver: DataTransferErrorResolver
     private let errorLogger: DataTransferErrorLogger
-    
+    private var cancellables = Set<AnyCancellable>()
+
     public init(with networkService: NetworkService,
                 errorResolver: DataTransferErrorResolver = DefaultDataTransferErrorResolver(),
                 errorLogger: DataTransferErrorLogger = DefaultDataTransferErrorLogger()) {
@@ -50,36 +50,49 @@ public final class DefaultDataTransferService {
 }
 
 extension DefaultDataTransferService: DataTransferService {
-    public func request<E>(with endpoint: E) -> AnyPublisher<Result<Void, DataTransferError>, Never>? where E : ResponseRequestable, E.Response == Void {
+    
+    public func request<T: Decodable, E: ResponseRequestable>(with endpoint: E) -> Future<T,Error>? where E.Response == T {
+        return Future<T,Error> { promise in
+            self.networkService.request(endpoint: endpoint)?
+            .compactMap{$0}
+            .decode(type: T.self, decoder: JSONDecoder())
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { requestError in
+                print(requestError)
+                if case let .failure(requestError) = requestError {
+                    switch requestError {
+                    case let decodingError as DecodingError:
+                        promise(.failure(decodingError))
+                    case let apiError as NetworkError:
+                        promise(.failure(apiError))
+                    default:
+                        promise(.failure(NetworkError.cancelled))
+                    }
+                }
+            }, receiveValue: { result in
+                promise(.success(result))
+            })
+            .store(in: &self.cancellables)
+        }
+        
+        
         
     }
-    
-    
-    public func request<T: Decodable, E: ResponseRequestable>(with endpoint: E) -> AnyPublisher<Result<T, DataTransferError>,Never>? where E.Response == T {
 
-        return self.networkService.request(endpoint: endpoint) { result in
-            switch result {
-            case .success(let data):
-                let result: Result<T, DataTransferError> = self.decode(data: data, decoder: endpoint.responseDecoder)
-                DispatchQueue.main.async { return completion(result) }
-            case .failure(let error):
-                self.errorLogger.log(error: error)
-                let error = self.resolve(networkError: error)
-                DispatchQueue.main.async { return completion(.failure(error)) }
-            }
-        }
-    }
-
-    public func request<E>(with endpoint: E, completion: @escaping CompletionHandler<Void>) -> NetworkCancellable? where E : ResponseRequestable, E.Response == Void {
-        return self.networkService.request(endpoint: endpoint) { result in
-            switch result {
-            case .success:
-                DispatchQueue.main.async { return completion(.success(())) }
-            case .failure(let error):
-                self.errorLogger.log(error: error)
-                let error = self.resolve(networkError: error)
-                DispatchQueue.main.async { return completion(.failure(error)) }
-            }
+    public func request<E>(with endpoint: E) -> Future<Void,Error>? where E : ResponseRequestable, E.Response == Void {
+        return Future<Void,Error> { promise in
+            self.networkService.request(endpoint: endpoint)?
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { requestError in
+                if case let .failure(requestError) = requestError {
+                    self.errorLogger.log(error: requestError)
+                    let error = self.resolve(networkError: requestError)
+                    promise(.failure(error))
+                }
+            }, receiveValue: { result in
+                promise(.success(()))
+            })
+            .store(in: &self.cancellables)
         }
     }
 

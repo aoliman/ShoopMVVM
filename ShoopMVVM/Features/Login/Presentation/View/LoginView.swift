@@ -6,9 +6,16 @@
 //
 
 import SwiftUI
+import Combine
 import MapKit
 struct LoginView: View {
+    @ObservedObject var loginViewModel:LoginViewModel
 
+
+    init(loginViewModel:LoginViewModel){
+        self.loginViewModel = loginViewModel
+    }
+    
     var body: some View {
 //        HStack {
 //
@@ -96,13 +103,45 @@ struct LoginView: View {
 //        }
         
         
-      LandMarkListView()
         
+        
+//      LandMarkListView()
+        
+        ZStack{
+            Image("background_login").resizable().ignoresSafeArea()
+            VStack(alignment: .leading){
+                Text("Sign In").font(.custom("Poppins", size: 36)).padding(.bottom, 30)
+                
+                Text("Please enter your email and password to sign in").fontWeight(.medium).font(.custom("Poppins", size: 36)).padding(.bottom, 28)
+                
+                
+                Text("Email").padding(.bottom, 20)
+                
+                STextField(sTextFieldModel:$loginViewModel.userNameTextFieldModel).padding(.bottom, 30)
+                
+                Text("Password").padding(.bottom, 20)
+                STextField(sTextFieldModel: $loginViewModel.passwordTextFieldModel).padding(.bottom, 30)
+                
+            Spacer()
+                HStack(alignment: .center){
+                    Spacer()
+                    Button("SIGN IN", action:{
+                        loginViewModel.getUserProfile(userId: "9d94dc74-e5b7-4d08-ab2f-14fe450ada88")
+                    } ).padding(/*@START_MENU_TOKEN@*/.vertical, 20.0/*@END_MENU_TOKEN@*/).padding(.horizontal, 90.0).font(.custom("Poppins_Bold", size: 18)).foregroundColor(.white).background(.red).cornerRadius(100)
+                    Spacer()
+                }
+                
+                
+                
+            
+        }.padding(32)
+            
+        }
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
-    }
-}
+//struct LoginView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LoginView(loginViewModel:LoginSceneDIContainer(dependencies: <#LoginSceneDIContainer.Dependencies#>).makeLoginViewModel())
+//    }
+//}
